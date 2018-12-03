@@ -2,10 +2,16 @@ package com.learn.restapi.nov.NovApi.bean;
 
 import java.util.Date;
 
+import javax.validation.constraints.*;
+
 public class User {
 	
 	private Integer id;
+	
+	@Size(min=2, message="!!!name should be longer!!!")
 	private String name;
+	
+	@Past(message="!!!BirthDate cant be in future!!!")
 	private Date birthDate;
 	
 	public User(){
