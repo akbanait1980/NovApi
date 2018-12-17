@@ -1,0 +1,10 @@
+insert into user values (1, sysdate(), 'a1');
+insert into user values (2, sysdate(), 'a2');
+insert into user values (3, sysdate(), 'a3');
+insert into user values (4, sysdate(), 'a4');
+insert into user values (5, sysdate(), 'a5');
+insert into post values (101, 'my desc 101', 1);
+insert into post values (102, 'my desc 102', 1);
+insert into post values (103, 'my desc 103', 1);
+insert into post values (104, 'my desc 104', 2);
+insert into post values (105, 'my desc 105', 4);

@@ -1,18 +1,30 @@
 package com.learn.restapi.nov.NovApi.bean;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.*;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 
+@Entity
 public class User {
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
-	
+
 	@Size(min=2, message="!!!name should be longer!!!")
 	private String name;
 	
 	@Past(message="!!!BirthDate cant be in future!!!")
 	private Date birthDate;
+	
+	//from POST Class
+	@OneToMany(mappedBy="user") 
+	private List<Post> post;
 	
 	public User(){
 		
@@ -42,6 +54,14 @@ public class User {
 	}
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+	
+	public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
 	}
 
 	@Override
